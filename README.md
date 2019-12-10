@@ -33,20 +33,6 @@ https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?w
         str.AppendLine($"Complemento: {retorno.complemento}")
         str.AppendLine($"Complemento 2: {retorno.complemento2}")
 
-        If retorno.unidadesPostagem IsNot Nothing Then
-            For Each unidade As CORREIOS.unidadePostagemERP In retorno.unidadesPostagem
-
-                str.AppendLine("*** Diretório Regional ***")
-                str.AppendLine($" {unidade.diretoriaRegional}")
-                str.AppendLine($" {unidade.endereco}")
-                str.AppendLine($" {unidade.nome}")
-                str.AppendLine($" {unidade.status}")
-                str.AppendLine($" {unidade.tipo}")
-                str.AppendLine("")
-
-            Next
-        End If
-
         MsgBox(str.ToString)
 
     End Sub

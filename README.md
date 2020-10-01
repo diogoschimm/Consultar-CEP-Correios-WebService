@@ -38,3 +38,40 @@ https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?w
     End Sub
 ```
 
+
+## Código para Insominia (REST)
+
+POST: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
+
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+                  xmlns:cli="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+    <soapenv:Header />
+    <soapenv:Body>
+        <cli:consultaCEP>
+            <cep>78005100</cep>
+        </cli:consultaCEP>
+    </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Retorno
+
+```xml
+<soap:Envelope
+  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns2:consultaCEPResponse
+      xmlns:ns2="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+      <return>
+        <bairro>Centro-Norte</bairro>
+        <cep>78005100</cep>
+        <cidade>Cuiabá</cidade>
+        <complemento2>- de 949/950 a 1898/1899</complemento2>
+        <end>Avenida Marechal Deodoro</end>
+        <uf>MT</uf>
+      </return>
+    </ns2:consultaCEPResponse>
+  </soap:Body>
+</soap:Envelope>
+```
